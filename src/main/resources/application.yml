@@ -10,8 +10,14 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
+
 logging:
   level:
     org.springframework.jdbc.core.JdbcTemplate: debug
     org.flywaydb: info
+
+pipeline:
+  batch-size: 500
+  thread-count: 4
+
 

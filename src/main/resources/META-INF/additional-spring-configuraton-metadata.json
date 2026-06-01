@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "pipeline.batch-size",
+      "type": "java.lang.Integer",
+      "description": "Batch size for JDBC batch update"
+    },
+    {
+      "name": "pipeline.thread-count",
+      "type": "java.lang.Integer",
+      "description": "Number of threads for parallel processing"
+    }
+  ]
+}

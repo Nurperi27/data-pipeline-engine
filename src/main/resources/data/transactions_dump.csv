@@ -1,0 +1,11 @@
+sender_account_id, receiver_account_id, amount, category, description, transaction_date
+1, 2, 5000.00, SALARY, Salary for May, 2026-05-01T10:00:00
+2, 3, abc, GROCERIES,  Purchase of products, 2026-05-02T12:00:00
+3, 1, -1500.00, CAFE, Coffee, 2026-05-03T09:00:00
+1, 3, 3000.00, UTILITIES, Internet payment, 2026-05-04T15:00:00
+xyz, 2, 2500.00, TRANSFERS, Transfer to a friend, 2026-05-05T18:00:00
+1, 2, 750.00, GROCERIES, Frunze Store, 2026-05-06T11:00:00
+3, 2, , CAFE, Empty amount, 2026-05-07T14:00:00
+2, 1, 1200.00, UTILITIES, Payment for light, 2026-05-08T09:00:00
+1, 3, 300.00, TRANSFERS, Transaction, 2026-05-09T16:00:00
+2, 3, -50.00, GROCERIES, Negative amount, 2026-05-10T10:00:00

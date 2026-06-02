@@ -17,12 +17,12 @@ public class JdbcDataPipelineRepository implements DataPipelineRepository {
     @Override
     public void saveRawTransactionsBatch(List<RawTransaction> rawTransactions) {
         String sql = """
-                insert into raw_transactions_import (sender_account_id, receiver_account_id, amount, category, description, transaction_date, status, error_message)
+                insert into raw_transactions_import (sender_account_id, receiver_account_id, amount_amount, category, description, transaction_date, import_status, error_message)
                 values (?, ?, ?, ?, ?, ?, ?, ?)
                 """;
         jdbcTemplate.batchUpdate(sql, rawTransactions, 500, (ps, t) -> {
             ps.setString(1, t.getSenderAccountId());
-            ps.setString(2, t.getRecipientAccountId());
+            ps.setString(2, t.getReceiverAccountId());
             ps.setString(3, t.getAmount());
             ps.setString(4, t.getCategory());
             ps.setString(5, t.getDescription());
@@ -35,7 +35,7 @@ public class JdbcDataPipelineRepository implements DataPipelineRepository {
     @Override
     public void saveCleanTransactionsBatch(List<CleanTransaction> cleanTransactions) {
         String  sql = """
-                insert into clean_transactions (sender_account_id, receiver-account_id, amount, category, description, transaction_date)
+                insert into clean_transactions (sender_account_id, receiver_account_id, amount, category, description, transaction_date)
                 values (?, ?, ?, ?, ?, ?)
         """;
         jdbcTemplate.batchUpdate(sql, cleanTransactions, 500, (ps, t) -> {

@@ -101,6 +101,6 @@ public class DataPipelineServiceImpl implements DataPipelineService {
     }
 
     private CleanTransaction toClean(RawTransaction tx) {
-        return CleanTransaction.builder().senderAccountId(Long.parseLong(tx.getSenderAccountId())).receiverAccountId(Long.parseLong(tx.getReceiverAccountId())).amount(new BigDecimal(tx.getAmount())).category(tx.getCategory()).description(tx.getDescription()).transactionDate(LocalDateTime.parse(tx.getTransactionDate())).build();
+        return CleanTransaction.builder().senderAccountId(Long.parseLong(tx.getSenderAccountId().trim())).receiverAccountId(Long.parseLong(tx.getReceiverAccountId().trim())).amount(new BigDecimal(tx.getAmount().trim())).category(tx.getCategory().trim()).description(tx.getDescription().trim()).transactionDate(LocalDateTime.parse(tx.getTransactionDate().trim())).build();
     }
 }

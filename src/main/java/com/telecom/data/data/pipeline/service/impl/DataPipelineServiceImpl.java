@@ -24,10 +24,10 @@ import java.util.concurrent.Future;
 public class DataPipelineServiceImpl implements DataPipelineService {
     private final JdbcDataPipelineRepository jdbcDataPipelineRepository;
 
-    @Value("${pipeline.batch-size: 500}")
+    @Value("${pipeline.batch-size:500}")
     private int batchSize;
 
-    @Value("${pipeline.thread-count: 4}")
+    @Value("${pipeline.thread-count:4}")
     private int threadCount;
     @Override
     public void processCsvFile(String filePath) throws Exception {
